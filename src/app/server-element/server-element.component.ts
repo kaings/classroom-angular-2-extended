@@ -7,7 +7,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class ServerElementComponent implements OnInit {
   @Input() element: {name: string, type: string, content: string};
-  @Output() removeElement = new EventEmitter<{id: number}>();
+  @Output() removeElement = new EventEmitter<number>();
 
   constructor() { }
 
@@ -15,6 +15,6 @@ export class ServerElementComponent implements OnInit {
   }
 
   onRemoveElement (id: number) {
-    this.removeElement.emit({id});
+    this.removeElement.emit(id);
   }
 }
